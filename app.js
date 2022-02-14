@@ -6,16 +6,16 @@ if(!address){
   console.log("PLZ enter location");
 }
 else{
-geocoding(address, (error, data) => {
+geocoding(address, (error, {latitude,longitude,place}={}) => {
  if(error){
    return console.log(error);
  }
  
-  forecast(data.latitude,data.longitude,(error, forecastData) => {
+  forecast(latitude,longitude,(error, forecastData) => {
     if(error){
       return console.log(error);
     }
-    console.log("location", data.place);
+    console.log("location", place);
     console.log(forecastData);
   });
 });
