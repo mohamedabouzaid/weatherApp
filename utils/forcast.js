@@ -17,10 +17,7 @@ const forecast = (latitude, longitude,callback) => {
             callback("Unable to find location. Try another search");
         }
         else {
-           /* const weather_descriptions= response.body.current.weather_descriptions[0]
-            const temperature= response.body.current.temperature
-            const feelslike=response.body.current.feelslike
-            callback(undefined,{weather_descriptions,temperature,feelslike})*/
+           
             callback(undefined,response.body.current.weather_descriptions[0]+'.It is cruelty '+ response.body.current.temperature+' degree out . There is a '+ response.body.current.feelslike+' % chance of rain')
         }
 
