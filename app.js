@@ -1,5 +1,6 @@
 const request = require("postman-request");
-const geocoding=require('./utils/geocoging')
+const geocoding=require('./utils/geocoging');
+const forecast=require('./utils/forcast')
 /*
 const url =
   "http://api.weatherstack.com/current?access_key=cfaf0c2804129a32e2de34bad2aee021&query=New%20York&units=f";
@@ -45,8 +46,11 @@ const geocoding = (address,callback) => {
   });
 };
 */
-geocoding("ismailia", (error, data) => {
+geocoding("boston", (error, data) => {
   console.log("error", error);
   console.log("data", data);
 });
-encodeURI
+forecast(-71.0596,42.3605,(error, data) => {
+  console.log("error", error);
+  console.log("data", data);
+});
